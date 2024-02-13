@@ -61,7 +61,7 @@ def info(objects: str):
         table.add_row("pubkey", str(m.pubkey))
         table.add_row("npub", str(PublicKey(m.pubkey).bech32()))
         console.print(table)
-        if m.relays is not None:
+        if getattr(m, 'relays', None) is not None:
             table = Table("relay")
             for url in m.relays:
                 table.add_row(url)

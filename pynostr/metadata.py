@@ -121,6 +121,8 @@ class Metadata(Event):
             return m
         if pubkey is not None:
             m.pubkey = pubkey
+        if relays is not None:
+            m.relays = relays
         return m
 
     @classmethod
